@@ -50,20 +50,26 @@
   }
 }
 
-body {
+/* GLOBAL RESET FOR RESPONSIVENESS */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 #root {
-  width: 1126px;
+  width: 100%; /* Changed from fixed 1126px */
   max-width: 100%;
   margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
+  text-align: left; /* Changed from center to fix layout shifting */
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
 h1,
