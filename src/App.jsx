@@ -309,14 +309,12 @@ const App = () => {
           padding: 0 15px; 
         }
         
-        .logo { font-family: var(--fb); font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; color: var(--color-text-dark); }
-        .logo span { color: var(--color-accent); }
-        .nav-links { display: flex; gap: 2rem; }
+        .nav-links { display: flex; gap: 2rem; margin-left: auto; }
         .nav-link { color: var(--color-text-dark); text-decoration: none; font-size: .9rem; font-weight: 500; position: relative; padding-bottom: 4px; }
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--color-accent); transition: width .3s ease; }
         .nav-link:hover::after { width: 100%; }
         
-        .mob-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; z-index: 101; }
+        .mob-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; z-index: 101; margin-left: auto; }
         .ham { width: 24px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; }
         .ham span { display: block; height: 2px; background: var(--color-text-dark); transition: .3s; border-radius: 2px; }
         .ham.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
@@ -351,7 +349,7 @@ const App = () => {
           max-width: 320px; 
           height: 100vh; 
           background: var(--color-surface-dark); 
-          padding: 2rem 2rem; 
+          padding: 2rem;
           display: flex; 
           flex-direction: column; 
           gap: 1.5rem; 
@@ -363,17 +361,6 @@ const App = () => {
         }
         .mob-nav.open { right: 0; }
         
-        .mob-close-btn {
-          align-self: flex-end;
-          background: none;
-          border: none;
-          color: var(--color-muted-dark);
-          cursor: pointer;
-          padding: 8px;
-          margin-bottom: 1rem;
-          transition: color 0.3s;
-        }
-        .mob-close-btn:hover { color: var(--color-accent); }
         
         .mob-nav a { color: var(--color-text-dark); text-decoration: none; font-size: 1.2rem; font-weight: 500; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         
@@ -567,7 +554,6 @@ const App = () => {
 
         <nav className="navbar" id="nav">
           <div className="nav-inner">
-            <div className="logo">A<span>.</span></div>
             <div className="nav-links desk">
               <a href="#about" className="nav-link">About</a>
               <a href="#skills" className="nav-link">Skills</a>
@@ -591,12 +577,6 @@ const App = () => {
           ></div>
           
           <div className={`mob-nav ${menuOpen ? 'open' : ''}`} id="mnav" aria-expanded={menuOpen}>
-            <button className="mob-close-btn" onClick={closeMenu} aria-label="Close Navigation">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
             <a href="#about" onClick={closeMenu}>About</a>
             <a href="#skills" onClick={closeMenu}>Skills</a>
             <a href="#experience" onClick={closeMenu}>Projects</a>
@@ -718,6 +698,30 @@ const App = () => {
             <h2 className="reveal fu" ref={addToRevealRefs}>Projects & Practical Exposure</h2>
             <div className="project-grid">
               
+              {/* --- NEW ARCLANE GLOBAL PROJECT --- */}
+              <div className="card reveal fu" ref={addToRevealRefs}>
+                <div className="th">
+                  <h3 className="tt">Arclane Global</h3>
+                  <span className="td">Professional</span>
+                </div>
+                <h4 className="tr">Live Web Application</h4>
+                <ul className="tp">
+                  <li>Developed and deployed a professional web platform representing the Arclane Global brand.</li>
+                  <li>Engineered a responsive, modern interface to ensure a seamless cross-device user experience.</li>
+                </ul>
+                <div style={{ marginTop: 'auto', paddingTop: '1.5rem' }}>
+                  <a 
+                    href="https://arclaneglobaldemo.onrender.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn btn-p"
+                    style={{ padding: '8px 16px', fontSize: '0.9rem' }}
+                  >
+                    View Live Demo
+                  </a>
+                </div>
+              </div>
+
               <div className="card reveal fu" ref={addToRevealRefs}>
                 <div className="th">
                   <h3 className="tt">AI & ML Learning Practice</h3>
