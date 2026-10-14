@@ -1,4 +1,71 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+const roles = ['AI & ML Student', 'Frontend Developer', 'Tech Innovator'];
+
+const projects = [
+  {
+    title: 'SIH-206 Disaster Response',
+    category: 'Hackathon',
+    subtitle: 'Emergency Preparedness & Response Platform',
+    details: [
+      'Built role-based consoles for citizens, rescue volunteers, and disaster management authorities using React and Express.',
+      'Implemented SOS tracking, shelter discovery, real-time updates, and explainable rules for early-warning demonstrations.',
+    ],
+    liveUrl: 'https://sih-206.vercel.app',
+    repoUrl: 'https://github.com/avira-l07/SIH-206',
+  },
+  {
+    title: 'Arclane Global',
+    category: 'Web Application',
+    subtitle: 'Digital Services & Agency Website',
+    details: [
+      'Developed a responsive React website showcasing web development, AI solutions, and business automation services.',
+      'Created animated sections, a project showcase, and a contact workflow for project enquiries.',
+    ],
+    liveUrl: 'https://arclaneglobaldemo.onrender.com',
+    repoUrl: 'https://github.com/avira-l07/Arclane-Global-demo',
+  },
+  {
+    title: 'AI Recruitment Platform',
+    category: 'AI / Full Stack',
+    subtitle: 'Recruitment Intelligence with FastAPI & React',
+    details: [
+      'Combined rule-based candidate scoring with AI semantic analysis to review resumes and explain candidate-job fit.',
+      'Added HR summaries, candidate roadmaps, and interview question generation to support recruitment workflows.',
+    ],
+    repoUrl: 'https://github.com/avira-l07/AI-recruitment-platform',
+  },
+  {
+    title: 'iTantra',
+    category: 'Prototype',
+    subtitle: 'Offline Semantic Voice Transceiver',
+    details: [
+      'Developed an Android prototype with push-to-talk, voice activity detection, semantic packets, and multilingual speech integration.',
+      'Implemented Bluetooth and local Wi-Fi transport code; physical-device inference and two-phone communication remain under verification.',
+    ],
+    repoUrl: 'https://github.com/avira-l07/Itantra',
+  },
+  {
+    title: 'Manas Advertising',
+    category: 'Front End',
+    subtitle: 'Advertising & Branding Website',
+    details: [
+      'Built a React and TypeScript interface presenting advertising services, branding work, campaigns, and contact information.',
+      'Created reusable page sections with editable content and session-based configuration.',
+    ],
+    repoUrl: 'https://github.com/avira-l07/frontend_manas',
+  },
+  {
+    title: 'FamilyFinance',
+    category: 'UI Prototype',
+    subtitle: 'Family Finance Account Interface',
+    details: [
+      'Designed a responsive front-end prototype for family finance account access.',
+      'Created sign-in and registration interfaces using HTML, CSS, and JavaScript.',
+    ],
+    repoUrl: 'https://github.com/avira-l07/Dashboard',
+  },
+];
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,8 +76,6 @@ const App = () => {
   const card3DRef = useRef(null);
   const ringsRef = useRef(null);
   const revealRefs = useRef([]);
-  
-  const roles = ['AI & ML Student', 'Frontend Developer', 'Tech Innovator'];
   
   // Toggle mobile navigation menu
   const handleMenuToggle = () => {
@@ -230,7 +295,7 @@ const App = () => {
         ec1.removeEventListener('mouseleave', handleECMouseLeave);
       }
     };
-  }, [roles.length]);
+  }, []);
   
   const addToRevealRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
@@ -453,6 +518,10 @@ const App = () => {
         .tp li { position: relative; padding-left: 1.4rem; margin-bottom: .6rem; font-size: .95rem; color: var(--color-muted-light); line-height: 1.6; }
         .tp li:last-child { margin-bottom: 0; }
         .tp li::before { content: '▹'; position: absolute; left: 0; color: var(--color-primary); font-weight: bold; }
+        .project-links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: auto; padding-top: 1.5rem; }
+        .project-links .btn { padding: 8px 16px; font-size: .9rem; }
+        .project-source { border: 1px solid var(--color-primary); color: var(--color-primary); }
+        .project-source:hover { background: var(--color-bg-alt-light); transform: translateY(-3px); }
         
         .edu-car { display: flex; gap: 2rem; overflow-x: auto; padding: 2rem 0; scroll-snap-type: x mandatory; scrollbar-width: none; }
         .edu-car::-webkit-scrollbar { display: none; }
@@ -632,11 +701,11 @@ const App = () => {
                 </div>
               </div>
               <div className="reveal sr" ref={addToRevealRefs}>
-                <p className="lead">Second-year B.Tech Computer Science Engineering (AI & ML) student with a strong interest in Artificial Intelligence, Machine Learning, and Generative AI.</p>
+                <p className="lead">Third-year B.Tech Computer Science Engineering (AI & ML) student with a strong interest in Artificial Intelligence, Machine Learning, and Generative AI.</p>
                 <p className="objective-about">Passionate about applying technical skills to solve complex problems and crafting user-centric interfaces. Equally at home in code-heavy architecture and clean visual interface design.</p>
                 <div className="stats">
-                  <div className="stat"><span className="stat-n">2nd</span><span className="stat-l">Year B.Tech</span></div>
-                  <div className="stat"><span className="stat-n">3+</span><span className="stat-l">Core Languages</span></div>
+                  <div className="stat"><span className="stat-n">3rd</span><span className="stat-l">Year B.Tech</span></div>
+                  <div className="stat"><span className="stat-n">2</span><span className="stat-l">Core Languages</span></div>
                   <div className="stat"><span className="stat-n">Dual</span><span className="stat-l">AI + UI Focus</span></div>
                 </div>
               </div>
@@ -650,7 +719,6 @@ const App = () => {
             <div className="hex-grid" id="hexgrid" ref={addToRevealRefs}>
               {[
                 { cat: 'Programming', name: 'C' },
-                { cat: 'Programming', name: 'C++' },
                 { cat: 'Programming', name: 'Python' },
                 { cat: 'Web Dev', name: 'Front-End' },
                 { cat: 'Web Dev', name: 'UI/UX Dev' },
@@ -674,7 +742,7 @@ const App = () => {
             <p className="sub-title reveal fu" ref={addToRevealRefs}>Core Proficiency</p>
             <div className="rings reveal fu" ref={(el) => { ringsRef.current = el; addToRevealRefs(el); }}>
               {[
-                { id: 'r1', label: '85%', title: 'Python / C++' },
+                { id: 'r1', label: '85%', title: 'Python' },
                 { id: 'r2', label: '70%', title: 'Machine Learning' },
                 { id: 'r3', label: '80%', title: 'Generative AI' },
                 { id: 'r4', label: '75%', title: 'UI Development' },
@@ -692,79 +760,35 @@ const App = () => {
           </div>
         </section>
 
-        {/* --- UPDATED Projects Section --- */}
         <section id="experience" className="section bg2" ref={addToRevealRefs}>
           <div className="container">
-            <h2 className="reveal fu" ref={addToRevealRefs}>Projects & Practical Exposure</h2>
+            <h2 className="reveal fu" ref={addToRevealRefs}>Projects</h2>
             <div className="project-grid">
-              
-              {/* --- NEW ARCLANE GLOBAL PROJECT --- */}
-              <div className="card reveal fu" ref={addToRevealRefs}>
-                <div className="th">
-                  <h3 className="tt">Arclane Global</h3>
-                  <span className="td">Professional</span>
-                </div>
-                <h4 className="tr">Live Web Application</h4>
-                <ul className="tp">
-                  <li>Developed and deployed a professional web platform representing the Arclane Global brand.</li>
-                  <li>Engineered a responsive, modern interface to ensure a seamless cross-device user experience.</li>
-                </ul>
-                <div style={{ marginTop: 'auto', paddingTop: '1.5rem' }}>
-                  <a 
-                    href="https://arclaneglobaldemo.onrender.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn btn-p"
-                    style={{ padding: '8px 16px', fontSize: '0.9rem' }}
-                  >
-                    View Live Demo
-                  </a>
-                </div>
-              </div>
-
-              <div className="card reveal fu" ref={addToRevealRefs}>
-                <div className="th">
-                  <h3 className="tt">AI & ML Learning Practice</h3>
-                  <span className="td">Ongoing</span>
-                </div>
-                <h4 className="tr">Academic Focus</h4>
-                <ul className="tp">
-                  <li>Explored core AI and Machine Learning concepts through structured university coursework and intensive hands-on exercises.</li>
-                  <li>Applied practical problem-solving methodologies to accurately evaluate model-based learning techniques.</li>
-                  <li>Strengthened analytical thinking capabilities through continuous experimentation and active learning modules.</li>
-                </ul>
-              </div>
-
-              <div className="card reveal fu" ref={addToRevealRefs}>
-                <div className="th">
-                  <h3 className="tt">Generative AI Exploration</h3>
-                  <span className="td">Ongoing</span>
-                </div>
-                <h4 className="tr">Self-Directed Project</h4>
-                <ul className="tp">
-                  <li>Studied structured prompt workflows and engineered prompt methodologies for streamlined AI-assisted solution development.</li>
-                  <li>Experimented with Generative AI applications to optimize day-to-day productivity and problem-solving metrics.</li>
-                  <li>Tracked and integrated cutting-edge, emerging AI tools and frameworks through focused continuous learning.</li>
-                </ul>
-              </div>
-
-              <div className="card reveal fu" ref={addToRevealRefs}>
-                <div className="th">
-                  <h3 className="tt">Front-End & UI Development</h3>
-                  <span className="td">Ongoing</span>
-                </div>
-                <h4 className="tr">Engineering Practice</h4>
-                <ul className="tp">
-                  <li>Designed rich user interface layouts and interactive front-end components during self-directed engineering activities.</li>
-                  <li>Applied modern design aesthetics to transform technical logic into highly structured, clean, user-friendly interfaces.</li>
-                  <li>Refined development capabilities through recursive deployment, debugging, and framework experimentation.</li>
-                </ul>
-              </div>
-
+              {projects.map((project) => (
+                <article className="card reveal fu" ref={addToRevealRefs} key={project.repoUrl}>
+                  <div className="th">
+                    <h3 className="tt">{project.title}</h3>
+                    <span className="td">{project.category}</span>
+                  </div>
+                  <h4 className="tr">{project.subtitle}</h4>
+                  <ul className="tp">
+                    {project.details.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                  <div className="project-links">
+                    {project.liveUrl && (
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-p" aria-label={`View live demo of ${project.title}`}>
+                        View Live Demo
+                      </a>
+                    )}
+                    <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="btn project-source" aria-label={`View ${project.title} on GitHub`}>
+                      View on GitHub
+                    </a>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
-        {/* --- End of UPDATED Projects Section --- */}
 
         <section id="education" className="section" ref={addToRevealRefs}>
           <div className="container">
@@ -773,7 +797,7 @@ const App = () => {
               <div className="ecard card reveal zi" id="ec1" ref={(el) => { card3DRef.current = el; addToRevealRefs(el); }}>
                 <div className="orn tl2"></div>
                 <div className="orn br"></div>
-                <div className="ey">Expected 2028 · Second-Year Student</div>
+                <div className="ey">Expected 2028 · Third-Year Student</div>
                 <h3 className="ed">Computer Science Engineering (AI & ML)</h3>
                 <h4 className="ei">Bachelor of Technology (B.Tech)</h4>
                 <p className="edesc">Focused coursework in core AI concepts, ML models, and software engineering principles.</p>
